@@ -5,7 +5,18 @@
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>demo-vue3-ele</title>
-    <script type="module" crossorigin src="./assets/index-DMWRJz6i.js"></script>
+    <!--
+      ProTree 的运行时依赖：jQuery + zTree v3 从 unpkg CDN 加载，不打进组件包。
+      data-helappend="0"：hel 解析本页时跳过这些脚本，避免重复注入；
+      组件内部检测到 window.jQuery / jQuery.fn.zTree 已存在时会直接复用。
+      样式不引入 zTree 官方皮肤 CSS，开关/勾选/连线由组件内化覆盖层自绘。
+    -->
+    <script data-helappend="0" src="https://unpkg.com/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script
+      data-helappend="0"
+      src="https://unpkg.com/@ztree/ztree_v3@3.5.48/js/jquery.ztree.all.min.js"
+    ></script>
+    <script type="module" crossorigin src="./assets/index-DAuO-k9B.js"></script>
   </head>
   <body>
     <div id="app"></div>
